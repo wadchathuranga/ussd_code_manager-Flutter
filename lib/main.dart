@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,16 +35,27 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Flutter Demo Home Page'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Home Screen',
+            ),
+            ElevatedButton(
+              onPressed: _callNumber,
+              child: const Text('Call Number'),
             ),
           ],
         ),
       ),
     );
   }
+
+  _callNumber() async{
+    const number = '#132#';
+    bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+    print('=======================\n$res');
+  }
+
 }

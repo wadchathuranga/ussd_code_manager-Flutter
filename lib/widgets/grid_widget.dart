@@ -15,6 +15,8 @@ class GridViewWidget extends StatelessWidget {
 
     List<String> serviceProvider = ["Airtel", "Dialog", "Hatch", "Mobitel"];
 
+    List<String> images = [AppImages.airtel1, AppImages.dialog1, AppImages.hutch1, AppImages.mobitel1];
+
     return Padding(
       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
       child: AlignedGridView.count(
@@ -29,13 +31,13 @@ class GridViewWidget extends StatelessWidget {
               if (index == 2) Navigator.push(context, MaterialPageRoute(builder: (context) => const HutchScreen()));
               if (index == 3) Navigator.push(context, MaterialPageRoute(builder: (context) => const MobitelScreen()));
             },
-            child: buildImageCard(index, serviceProvider[index]),
+            child: buildImageCard(index, serviceProvider[index], images[index]),
           ),
       ),
     );
   }
 
-  Widget buildImageCard(int index, spName) => Card(
+  Widget buildImageCard(int index, String spName, String image) => Card(
     margin: EdgeInsets.zero,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8),
@@ -43,16 +45,16 @@ class GridViewWidget extends StatelessWidget {
     child: Column(
       children: [
         Container(
-          margin: const EdgeInsets.all(8),
+          margin: const EdgeInsets.all(30),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              AppImages.logo,
+              image,
               fit: BoxFit.cover,
             ),
           ),
         ),
-        Text(spName),
+        // Text(spName),
       ],
     ),
   );

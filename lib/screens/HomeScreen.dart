@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/grid_widget.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -10,8 +12,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Home'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home'),
+      ),
+      body: const GridViewWidget(),
     );
   }
 }

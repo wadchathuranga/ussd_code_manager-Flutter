@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
+import './screens/HomeScreen.dart';
+import './widgets/grid_widget.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,12 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true, // should be false (old Theme)
+        useMaterial3: false, // should be false (old Theme)
       ),
-      home: const MyHomePage(),
+      home: const HomeScreen(),
     );
   }
 }
@@ -35,19 +39,20 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Flutter Demo Home Page'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Home Screen',
-            ),
-            ElevatedButton(
-              onPressed: _callNumber,
-              child: const Text('Call Number'),
-            ),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            'Home Screen',
+          ),
+          ElevatedButton(
+            onPressed: _callNumber,
+            child: const Text('Call Number'),
+          ),
+          const Flexible(
+           child: GridViewWidget(),
+          ),
+        ],
       ),
     );
   }

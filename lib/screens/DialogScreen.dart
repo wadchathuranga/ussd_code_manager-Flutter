@@ -10,8 +10,13 @@ class DialogScreen extends StatefulWidget {
 class _DialogScreenState extends State<DialogScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Dialog'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Dialog USSD'),
+      ),
+      body: Center(
+        child: Text('Dialog'),
+      ),
     );
   }
 }

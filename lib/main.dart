@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import 'package:ussdcode/screens/HomeScreen.dart';
-import 'package:ussdcode/screens/widgets/grid_widget.dart';
+
+import './screens/HomeScreen.dart';
+import './widgets/grid_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false, // should be false (old Theme)
       ),
-      home: const MyHomePage(),
+      home: const HomeScreen(),
     );
   }
 }

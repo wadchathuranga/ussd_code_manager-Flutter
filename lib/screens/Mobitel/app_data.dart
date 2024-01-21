@@ -1,39 +1,55 @@
 class USSDCode {
-  final int id;
   final String ussdCode;
   final String ussdDesc;
 
   const USSDCode({
-    required this.id,
     required this.ussdCode,
     required this.ussdDesc,
   });
 }
 
-List<USSDCode> ussdList = [
+List<USSDCode> preUssdList = [
   const USSDCode(
-    id: 1,
     ussdCode: "#132#",
     ussdDesc: "Check your sim registration information",
   ),
   const USSDCode(
-    id: 2,
     ussdCode: "*100#",
     ussdDesc: "Check your Account Balance",
   ),
   const USSDCode(
-    id: 3,
     ussdCode: "#888#",
     ussdDesc: "Self Help",
   ),
   const USSDCode(
-    id: 4,
     ussdCode: "#170#",
     ussdDesc: "Buy data packages",
   ),
   const USSDCode(
-    id: 5,
     ussdCode: "#222#",
     ussdDesc: "GPRS & MMS Settings",
+  ),
+];
+
+List<USSDCode> postUssdList = [
+  const USSDCode(
+    ussdCode: "#1456#",
+    ussdDesc: "Self Care Billing Information Portal",
+  ),
+  const USSDCode(
+    ussdCode: "#557#",
+    ussdDesc: "Loyalty Self care",
+  ),
+  const USSDCode(
+    ussdCode: "#556#",
+    ussdDesc: "Club Points Self Care Portal",
+  ),
+  const USSDCode(
+    ussdCode: "#138#",
+    ussdDesc: "Mobitel Store Locator",
+  ),
+  const USSDCode(
+    ussdCode: "#151#",
+    ussdDesc: "View Cash Bonanza winning chances",
   ),
 ];

@@ -10,8 +10,13 @@ class MobitelScreen extends StatefulWidget {
 class _MobitelScreenState extends State<MobitelScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Mobitel'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Mobitel USSD'),
+      ),
+      body: Center(
+        child: Text('Mobitel'),
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'app_data.dart';
 
@@ -77,10 +78,11 @@ class _MobitelScreenState extends State<MobitelScreen> with SingleTickerProvider
     return Card(
       elevation: 3,
       child: ListTile(
-        title: Text(data.ussdCode),
+        title: Text(data.ussdName),
         subtitle: Text(data.ussdDesc),
         trailing: ElevatedButton(
-          onPressed: () => FlutterPhoneDirectCaller.callNumber(data.ussdCode),
+          onPressed: () => launchUrl(Uri.parse('tel:${data.ussdCode}')), // this is no sure check this out
+          // onPressed: () => FlutterPhoneDirectCaller.callNumber(data.ussdCode),
           child: const Icon(Icons.phone),
         ),
       ),

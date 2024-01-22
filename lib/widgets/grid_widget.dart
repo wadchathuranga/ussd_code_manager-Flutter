@@ -3,7 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../screens/AirtelScreen.dart';
 import '../screens/HutchScreen.dart';
-import '../screens/MobitelScreen.dart';
+import '../screens/Mobitel/MobitelScreen.dart';
 import '../utils/app_images.dart';
 import '../screens/DialogScreen.dart';
 

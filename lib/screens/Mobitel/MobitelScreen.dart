@@ -11,8 +11,8 @@ class MobitelScreen extends StatefulWidget {
   State<MobitelScreen> createState() => _MobitelScreenState();
 }
 
-class _MobitelScreenState extends State<MobitelScreen> with SingleTickerProviderStateMixin {
-
+class _MobitelScreenState extends State<MobitelScreen>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
 
   @override
@@ -66,6 +66,7 @@ class _MobitelScreenState extends State<MobitelScreen> with SingleTickerProvider
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
+          physics: const ScrollPhysics(),
           shrinkWrap: true,
           itemCount: data.length,
           itemBuilder: (context, index) => buildTile(data[index]),
@@ -81,8 +82,10 @@ class _MobitelScreenState extends State<MobitelScreen> with SingleTickerProvider
         title: Text(data.ussdName),
         subtitle: Text(data.ussdDesc),
         trailing: ElevatedButton(
-          onPressed: () => launchUrl(Uri.parse('tel:${data.ussdCode}')), // this is no sure check this out
-          // onPressed: () => FlutterPhoneDirectCaller.callNumber(data.ussdCode),
+          onPressed: () => data.isDirect
+              ? FlutterPhoneDirectCaller.callNumber(data.ussdCode)
+              : launchUrl(Uri.parse('tel:${data.ussdCode}')),
+
           child: const Icon(Icons.phone),
         ),
       ),
